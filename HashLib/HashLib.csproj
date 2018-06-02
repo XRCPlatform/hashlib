@@ -3,29 +3,34 @@
   <PropertyGroup>
     <Company>BRhodium.HashLib</Company>
     <Copyright></Copyright>
-    <Description>The C# hash library based on HashLib</Description>
+    <Description>The C# hash library based on HashLib which is used in Bitcoin Rhodium</Description>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>2.1</Version>
+    <Version>2.1.2</Version>
   </PropertyGroup>
   
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard1.6;netstandard2.0;net46</TargetFrameworks>
     <PackageId>BRhodium.HashLib</PackageId>
     <Authors>BRhodium.HashLib</Authors>
     <Product>BRhodium.HashLib</Product>
     <PackageProjectUrl>https://gitlab.com/bitcoinrh/hashlib</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/bitcoinrh/hashlib</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2.1.2.0</AssemblyVersion>
+    <FileVersion>2.1.2.0</FileVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net46'">
+    <DefineConstants>TRACE;DEBUG;net46</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;NETCORE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;NETSTANDARD1_6;NETCORE;</DefineConstants>
-  </PropertyGroup>
-
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.6'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;NETCORE</DefineConstants>
+  </PropertyGroup>  
 </Project>
