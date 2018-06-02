@@ -1,20 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Company>NStratis.HashLib</Company>
-    <Copyright>Copyright © Stratis Platform SA 2017</Copyright>
+    <Company>BRhodium.HashLib</Company>
+    <Copyright></Copyright>
     <Description>The C# hash library based on HashLib</Description>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.0.1</Version>
+    <Version>2.1</Version>
   </PropertyGroup>
   
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>NStratis.HashLib</PackageId>
-    <Authors>NStratis.HashLib</Authors>
-    <Product>NStratis.HashLib</Product>
+    <PackageId>BRhodium.HashLib</PackageId>
+    <Authors>BRhodium.HashLib</Authors>
+    <Product>BRhodium.HashLib</Product>
+    <PackageProjectUrl>https://gitlab.com/bitcoinrh/hashlib</PackageProjectUrl>
+    <RepositoryUrl>https://gitlab.com/bitcoinrh/hashlib</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
