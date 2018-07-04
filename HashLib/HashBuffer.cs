@@ -10,7 +10,7 @@ namespace HashLib
 
         public HashBuffer(int a_length)
         {
-            Debug.Assert(a_length > 0);
+            //Debug.Assert(a_length > 0);
 
             m_data = new byte[a_length];
 
@@ -24,7 +24,7 @@ namespace HashLib
 
         public byte[] GetBytes()
         {
-            Debug.Assert(IsFull);
+            ////Debug.Assert(IsFull);
 
             m_pos = 0;
             return m_data;
@@ -39,10 +39,10 @@ namespace HashLib
 
         public bool Feed(byte[] a_data, ref int a_start_index, ref int a_length, ref ulong a_processed_bytes)
         {
-            Debug.Assert(a_start_index >= 0);
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_start_index + a_length <= a_data.Length);
-            Debug.Assert(!IsFull);
+            ////Debug.Assert(a_start_index >= 0);
+            ////Debug.Assert(a_length >= 0);
+            ////Debug.Assert(a_start_index + a_length <= a_data.Length);
+            ////Debug.Assert(!IsFull);
 
             if (a_data.Length == 0)
                 return false;
@@ -66,9 +66,9 @@ namespace HashLib
 
         public bool Feed(byte[] a_data, int a_length)
         {
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_length <= a_data.Length);
-            Debug.Assert(!IsFull);
+            ////Debug.Assert(a_length >= 0);
+            ////Debug.Assert(a_length <= a_data.Length);
+            ////Debug.Assert(!IsFull);
 
             if (a_data.Length == 0)
                 return false;

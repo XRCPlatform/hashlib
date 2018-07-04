@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>2.1.2</Version>
+    <Version>2.1.2.1</Version>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -18,8 +18,8 @@
     <PackageProjectUrl>https://gitlab.com/bitcoinrh/hashlib</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/bitcoinrh/hashlib</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2.1.2.0</AssemblyVersion>
-    <FileVersion>2.1.2.0</FileVersion>
+    <AssemblyVersion>2.1.2.1</AssemblyVersion>
+    <FileVersion>2.1.2.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'net46'">

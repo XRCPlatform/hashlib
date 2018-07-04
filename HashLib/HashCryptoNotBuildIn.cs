@@ -20,9 +20,9 @@ namespace HashLib
 
         public override void TransformBytes(byte[] a_data, int a_index, int a_length)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_index + a_length <= a_data.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_length >= 0);
+            //Debug.Assert(a_index + a_length <= a_data.Length);
 
             if (!m_buffer.IsEmpty)
             {
@@ -52,11 +52,11 @@ namespace HashLib
         {
             Finish();
 
-            Debug.Assert(m_buffer.IsEmpty);
+            //Debug.Assert(m_buffer.IsEmpty);
 
             byte[] result = GetResult();
 
-            Debug.Assert(result.Length == HashSize);
+            //Debug.Assert(result.Length == HashSize);
 
             Initialize();
             return new HashResult(result);
@@ -64,7 +64,7 @@ namespace HashLib
 
         protected void TransformBuffer()
         {
-            Debug.Assert(m_buffer.IsFull);
+            //Debug.Assert(m_buffer.IsFull);
 
             TransformBlock(m_buffer.GetBytes(), 0);
         }

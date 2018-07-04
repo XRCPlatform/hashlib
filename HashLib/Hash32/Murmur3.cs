@@ -623,7 +623,7 @@ namespace HashLib.Hash32
                 }
                 else
                 {
-                    Debug.Assert(value.Length == KeyLength);
+                    //Debug.Assert(value.Length == KeyLength);
 
                     m_key = Converters.ConvertBytesToUInt(value);
                 }

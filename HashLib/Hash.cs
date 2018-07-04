@@ -15,8 +15,8 @@ namespace HashLib
 
         public Hash(int a_hash_size, int a_block_size)
         {
-            Debug.Assert((a_block_size > 0) || (a_block_size == -1));
-            Debug.Assert(a_hash_size > 0);
+            //Debug.Assert((a_block_size > 0) || (a_block_size == -1));
+            //Debug.Assert(a_hash_size > 0);
 
             m_block_size = a_block_size;
             m_hash_size = a_hash_size;
@@ -363,7 +363,7 @@ namespace HashLib
 
         public void TransformStream(Stream a_stream, long a_length = -1)
         {
-            Debug.Assert((a_length == -1 || a_length > 0));
+            //Debug.Assert((a_length == -1 || a_length > 0));
 
             if (a_stream.CanSeek)
             {
@@ -470,9 +470,9 @@ namespace HashLib
         public void TransformFile(string a_file_name, long a_from = 0, long a_length = -1)
         {
 #if !NOFILEIO
-			Debug.Assert(new FileInfo(a_file_name).Exists);
-            Debug.Assert(a_from >= 0);
-            Debug.Assert((a_length == -1) || (a_length > 0));
+			//Debug.Assert(new FileInfo(a_file_name).Exists);
+            //Debug.Assert(a_from >= 0);
+            //Debug.Assert((a_length == -1) || (a_length > 0));
 
             using (FileStream stream = new FileStream(a_file_name, FileMode.Open, FileAccess.Read))
             {
@@ -492,11 +492,11 @@ namespace HashLib
 
         public void TransformBytes(byte[] a_data, int a_index)
         {
-            Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index >= 0);
 
             int length = a_data.Length - a_index;
 
-            Debug.Assert(length >= 0);
+            //Debug.Assert(length >= 0);
 
             TransformBytes(a_data, a_index, length);
         }

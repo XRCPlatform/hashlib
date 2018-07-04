@@ -78,9 +78,9 @@ namespace HashLib
 
         public override void TransformBytes(byte[] a_data, int a_index, int a_length)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_index + a_length <= a_data.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_length >= 0);
+            //Debug.Assert(a_index + a_length <= a_data.Length);
 
             m_hash.TransformBytes(a_data, a_index, a_length);
         }

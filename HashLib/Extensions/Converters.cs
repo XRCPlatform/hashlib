@@ -117,8 +117,8 @@ namespace HashLib
 
         public static ulong ConvertBytesToULongSwapOrder(byte[] a_in, int a_index)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_index + 8 <= a_in.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index + 8 <= a_in.Length);
 
             return ((ulong)a_in[a_index++] << 56) |
                    ((ulong)a_in[a_index++] << 48) |
@@ -132,16 +132,16 @@ namespace HashLib
 
         public static ulong ConvertBytesToULong(byte[] a_in, int a_index)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_index + 8 <= a_in.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index + 8 <= a_in.Length);
 
             return BitConverter.ToUInt64(a_in, a_index);
         }
 
         public static uint ConvertBytesToUIntSwapOrder(byte[] a_in, int a_index)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_index + 4 <= a_in.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index + 4 <= a_in.Length);
 
             return ((uint)a_in[a_index++] << 24) |
                    ((uint)a_in[a_index++] << 16) |
@@ -151,8 +151,8 @@ namespace HashLib
 
         public static uint ConvertBytesToUInt(byte[] a_in, int a_index = 0)
         {
-            Debug.Assert(a_index >= 0);
-            Debug.Assert(a_index + 4 <= a_in.Length);
+            //Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index + 4 <= a_in.Length);
 
             return (uint)a_in[a_index++] |
                    ((uint)a_in[a_index++] << 8) |
@@ -265,7 +265,7 @@ namespace HashLib
 
         public static void ConvertUIntToBytes(ulong a_in, byte[] a_out, int a_index)
         {
-            Debug.Assert(a_index + 4 <= a_out.Length);
+            //Debug.Assert(a_index + 4 <= a_out.Length);
 
             Array.Copy(BitConverter.GetBytes(a_in), 0, a_out, a_index, 4);
         }
@@ -279,14 +279,14 @@ namespace HashLib
 
         public static void ConvertULongToBytes(ulong a_in, byte[] a_out, int a_index)
         {
-            Debug.Assert(a_index + 8 <= a_out.Length);
+            //Debug.Assert(a_index + 8 <= a_out.Length);
 
             Array.Copy(BitConverter.GetBytes(a_in), 0, a_out, a_index, 8);
         }
 
         public static void ConvertULongToBytesSwapOrder(ulong a_in, byte[] a_out, int a_index)
         {
-            Debug.Assert(a_index + 8 <= a_out.Length);
+            //Debug.Assert(a_index + 8 <= a_out.Length);
 
             a_out[a_index++] = (byte)(a_in >> 56);
             a_out[a_index++] = (byte)(a_in >> 48);
@@ -405,7 +405,7 @@ namespace HashLib
         {
             a_in = a_in.Replace("-", "");
 
-            Debug.Assert(a_in.Length % 2 == 0);
+            //Debug.Assert(a_in.Length % 2 == 0);
 
             byte[] result = new byte[a_in.Length / 2];
 
@@ -443,48 +443,48 @@ namespace HashLib
         [Conditional("DEBUG")]
         private static void Check<I>(I[] a_in, int a_in_size, int a_out_size)
         {
-            Debug.Assert((a_in.Length * a_in_size % a_out_size) == 0);
+            //Debug.Assert((a_in.Length * a_in_size % a_out_size) == 0);
         }
 
         [Conditional("DEBUG")]
         private static void Check<I>(I[] a_in, int a_in_size, int a_out_size, int a_index, int a_length)
         {
-            Debug.Assert((a_length * a_in_size % a_out_size) == 0);
+            //Debug.Assert((a_length * a_in_size % a_out_size) == 0);
 
-            if (a_out_size > a_in_size)
-                Debug.Assert((a_length % (a_out_size / a_in_size)) == 0);
-            else
-                Debug.Assert(a_in_size % a_out_size == 0);
+            //if (a_out_size > a_in_size)
+                //Debug.Assert((a_length % (a_out_size / a_in_size)) == 0);
+            //else
+                //Debug.Assert(a_in_size % a_out_size == 0);
 
-            Debug.Assert(a_index >= 0);
+            //Debug.Assert(a_index >= 0);
 
-            if (a_length > 0)
-                Debug.Assert(a_index < a_in.Length);
+            //if (a_length > 0)
+                //Debug.Assert(a_index < a_in.Length);
 
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_index + a_length <= a_in.Length);
-            Debug.Assert(a_index + a_length <= a_in.Length);
+            //Debug.Assert(a_length >= 0);
+            //Debug.Assert(a_index + a_length <= a_in.Length);
+            //Debug.Assert(a_index + a_length <= a_in.Length);
         }
 
         [Conditional("DEBUG")]
         private static void Check<I, O>(I[] a_in, int a_in_size, O[] a_result, int a_out_size, int a_index_in, int a_length, 
             int a_index_out)
         {
-            Debug.Assert((a_length * a_in_size % a_out_size) == 0);
+            //Debug.Assert((a_length * a_in_size % a_out_size) == 0);
 
-            if (a_out_size > a_in_size)
-                Debug.Assert((a_length % (a_out_size / a_in_size)) == 0);
+            //if (a_out_size > a_in_size)
+                //Debug.Assert((a_length % (a_out_size / a_in_size)) == 0);
 
-            Debug.Assert(a_index_in >= 0);
+            //Debug.Assert(a_index_in >= 0);
 
-            if (a_length > 0)
-                Debug.Assert(a_index_in < a_in.Length);
+            //if (a_length > 0)
+                //Debug.Assert(a_index_in < a_in.Length);
 
-            Debug.Assert(a_length >= 0);
-            Debug.Assert(a_index_in + a_length <= a_in.Length);
-            Debug.Assert(a_index_in + a_length <= a_in.Length);
+            //Debug.Assert(a_length >= 0);
+            //Debug.Assert(a_index_in + a_length <= a_in.Length);
+            //Debug.Assert(a_index_in + a_length <= a_in.Length);
 
-            Debug.Assert(a_index_out + a_result.Length >= (a_length / a_out_size));
+            //Debug.Assert(a_index_out + a_result.Length >= (a_length / a_out_size));
         }
     }
 }

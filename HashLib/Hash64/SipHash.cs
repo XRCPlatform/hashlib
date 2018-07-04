@@ -215,7 +215,7 @@ namespace HashLib.Hash64
                 }
                 else
                 {
-                    Debug.Assert(value.Length == KeyLength.Value);
+                    //Debug.Assert(value.Length == KeyLength.Value);
 
                     m_key0 = Converters.ConvertBytesToULong(value, 0);
                     m_key1 = Converters.ConvertBytesToULong(value, 8);
